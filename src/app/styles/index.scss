@@ -1,0 +1,22 @@
+@import url(./_global.scss);
+@import url(./_vars.scss);
+
+html {
+    font-family: 'Inter', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: 'slnt' 0;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, rgb(244, 249, 255) 0%, rgb(224, 237, 251) 100%);
+    padding-block-start: 105px;
+}
+
+.sign-up-form {
+    max-width: 420px;
+    padding-inline: 30px;
+    margin-inline: auto;
+}
