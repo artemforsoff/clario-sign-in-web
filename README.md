@@ -1,6 +1,6 @@
 # Clario test assignment
 
-[Demo page](https://artemforsoff.github.io/clario-sign-in-web/dist/)
+[Demo page](https://artemforsoff.github.io/clario-sign-up-web/dist/)
 
 ## Stack technologies
 
