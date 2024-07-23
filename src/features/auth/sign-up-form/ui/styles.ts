@@ -33,6 +33,10 @@ export const styles = css`
         .errors {
             margin-block-start: 8px;
         }
+
+        &--password[class] {
+            margin-block-end: 40px;
+        }
     }
 
     button[type='submit'] {

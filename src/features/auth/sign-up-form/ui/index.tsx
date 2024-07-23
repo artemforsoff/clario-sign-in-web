@@ -79,7 +79,7 @@ export const SignUpForm = styled((props: SignUpFormProps) => {
                 )}
             </div>
 
-            <div className="field">
+            <div className="field field--password">
                 <Controller
                     name="password"
                     control={control}

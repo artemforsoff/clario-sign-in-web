@@ -40,7 +40,7 @@ export const Input = styled(
         font-size: 16px;
         line-height: 19px;
         border-radius: 10px;
-        border: 2px solid var(--default-color);
+        border: 1px solid white;
         padding: 10px 20px;
         width: 100%;
         transition-property: border-color;

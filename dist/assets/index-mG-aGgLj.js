@@ -59,7 +59,7 @@ attempted value: ${o}
         font-size: 16px;
         line-height: 19px;
         border-radius: 10px;
-        border: 2px solid var(--default-color);
+        border: 1px solid white;
         padding: 10px 20px;
         width: 100%;
         transition-property: border-color;
@@ -151,6 +151,10 @@ attempted value: ${o}
         .errors {
             margin-block-start: 8px;
         }
+
+        &--password[class] {
+            margin-block-end: 40px;
+        }
     }
 
     button[type='submit'] {
@@ -195,6 +199,6 @@ attempted value: ${o}
             bottom: -80px;
         }
     }
-`,Cg=({size:e=22,className:t})=>Q.jsx("svg",{className:t,width:e,height:e,viewBox:"0 0 22 22",fill:"none",children:Q.jsx("path",{d:"M10.5249 0.15918L13.3675 7.84137L21.0497 10.684L13.3675 13.5267L10.5249 21.2089L7.68219 13.5267L0 10.684L7.68219 7.84137L10.5249 0.15918Z",fill:"#CFE1F4"})}),us=e=>e?"success":"error",Fg=So(e=>{const{className:t}=e,{control:n,handleSubmit:r,formState:{errors:i,touchedFields:l},getValues:o}=S1({mode:"all",defaultValues:{email:"",password:""},resolver:_1(Ch({email:pu().trim().email("Email is not correct").required("Email is required"),password:pu().trim().min(8,"").test("allRegisters","",yt.isHasAllRegisters).test("oneDigit","",yt.isHasOneDigit)}))});return Q.jsxs("form",{className:t,onSubmit:r(()=>{}),children:[Q.jsx("h1",{className:"title",children:"Sign up"}),Q.jsxs("div",{className:"field",children:[Q.jsx(bc,{name:"email",control:n,render:({field:s})=>Q.jsx(Th,{...s,className:"input",placeholder:"Email",appearance:i.email?"error":void 0})}),i.email&&Q.jsx(Xi,{className:"error",appearance:"error",children:i.email.message})]}),Q.jsxs("div",{className:"field",children:[Q.jsx(bc,{name:"password",control:n,render:({field:s})=>Q.jsx(kg,{...s,className:"input input--password",placeholder:"Create your password",appearance:i.password?"error":void 0})}),Q.jsxs("div",{className:"errors",children:[Q.jsx(Xi,{className:"error",appearance:l.password?us((o("password")||"").length>=8):void 0,children:"Has at least 8 characters (no spaces)"}),Q.jsx(Xi,{className:"error",appearance:l.password?us(yt.isHasAllRegisters(o("password"))):void 0,children:"Uppercase and lowercase letters"}),Q.jsx(Xi,{className:"error",appearance:l.password?us(yt.isHasOneDigit(o("password"))):void 0,children:"1 digit minimum"})]})]}),Q.jsx("button",{type:"submit",children:"Sign up"}),[22,14,14,28,21].map((s,u)=>Q.jsx(Cg,{size:s,className:`star star--${u+1}`},u))]})})`
+`,Cg=({size:e=22,className:t})=>Q.jsx("svg",{className:t,width:e,height:e,viewBox:"0 0 22 22",fill:"none",children:Q.jsx("path",{d:"M10.5249 0.15918L13.3675 7.84137L21.0497 10.684L13.3675 13.5267L10.5249 21.2089L7.68219 13.5267L0 10.684L7.68219 7.84137L10.5249 0.15918Z",fill:"#CFE1F4"})}),us=e=>e?"success":"error",Fg=So(e=>{const{className:t}=e,{control:n,handleSubmit:r,formState:{errors:i,touchedFields:l},getValues:o}=S1({mode:"all",defaultValues:{email:"",password:""},resolver:_1(Ch({email:pu().trim().email("Email is not correct").required("Email is required"),password:pu().trim().min(8,"").test("allRegisters","",yt.isHasAllRegisters).test("oneDigit","",yt.isHasOneDigit)}))});return Q.jsxs("form",{className:t,onSubmit:r(()=>{}),children:[Q.jsx("h1",{className:"title",children:"Sign up"}),Q.jsxs("div",{className:"field",children:[Q.jsx(bc,{name:"email",control:n,render:({field:s})=>Q.jsx(Th,{...s,className:"input",placeholder:"Email",appearance:i.email?"error":void 0})}),i.email&&Q.jsx(Xi,{className:"error",appearance:"error",children:i.email.message})]}),Q.jsxs("div",{className:"field field--password",children:[Q.jsx(bc,{name:"password",control:n,render:({field:s})=>Q.jsx(kg,{...s,className:"input input--password",placeholder:"Create your password",appearance:i.password?"error":void 0})}),Q.jsxs("div",{className:"errors",children:[Q.jsx(Xi,{className:"error",appearance:l.password?us((o("password")||"").length>=8):void 0,children:"Has at least 8 characters (no spaces)"}),Q.jsx(Xi,{className:"error",appearance:l.password?us(yt.isHasAllRegisters(o("password"))):void 0,children:"Uppercase and lowercase letters"}),Q.jsx(Xi,{className:"error",appearance:l.password?us(yt.isHasOneDigit(o("password"))):void 0,children:"1 digit minimum"})]})]}),Q.jsx("button",{type:"submit",children:"Sign up"}),[22,14,14,28,21].map((s,u)=>Q.jsx(Cg,{size:s,className:`star star--${u+1}`},u))]})})`
     ${Eg}
 `,Tg=()=>Q.jsx(Fg,{className:"sign-up-form"});as.createRoot(document.getElementById("root")).render(Q.jsx(At.StrictMode,{children:Q.jsx(Tg,{})}));
