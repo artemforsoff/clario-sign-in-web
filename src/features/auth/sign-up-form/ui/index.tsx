@@ -23,6 +23,11 @@ const getPasswordErrorColor = (isValid: boolean): ColoredTextProps['appearance']
 
 export type SignUpFormProps = Readonly<PropsWithClassName>;
 
+type SignUpFormValues = {
+    email: string;
+    password: string;
+};
+
 export const SignUpForm = styled((props: SignUpFormProps) => {
     const { className } = props;
 
@@ -31,7 +36,7 @@ export const SignUpForm = styled((props: SignUpFormProps) => {
         handleSubmit,
         formState: { errors, touchedFields },
         getValues,
-    } = useForm({
+    } = useForm<SignUpFormValues>({
         mode: 'all',
         defaultValues: {
             email: '',
@@ -46,6 +51,7 @@ export const SignUpForm = styled((props: SignUpFormProps) => {
                     .required('Email is required'),
                 password: yup
                     .string()
+                    .required()
                     .trim()
                     .min(8, '')
                     .test('allRegisters', '', lib.isHasAllRegisters)
@@ -53,6 +59,14 @@ export const SignUpForm = styled((props: SignUpFormProps) => {
             })
         ),
     });
+
+    const getInputAppearance = (fieldKey: keyof SignUpFormValues) => {
+        if (getValues(fieldKey)) {
+            return errors[fieldKey] ? 'error' : 'success';
+        }
+
+        return undefined;
+    };
 
     return (
         <form className={className} onSubmit={handleSubmit(() => {})}>
@@ -67,7 +81,7 @@ export const SignUpForm = styled((props: SignUpFormProps) => {
                             {...field}
                             className="input"
                             placeholder="Email"
-                            appearance={errors.email ? 'error' : undefined}
+                            appearance={getInputAppearance('email')}
                         />
                     )}
                 />
@@ -88,7 +102,7 @@ export const SignUpForm = styled((props: SignUpFormProps) => {
                             {...field}
                             className="input input--password"
                             placeholder="Create your password"
-                            appearance={errors.password ? 'error' : undefined}
+                            appearance={getInputAppearance('password')}
                         />
                     )}
                 />

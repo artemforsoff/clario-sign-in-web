@@ -12,7 +12,7 @@ export type InputProps = DetailedHTMLProps<
     HTMLInputElement
 > & {
     inputClassName?: string;
-    appearance?: 'error' | 'default';
+    appearance?: 'error' | 'default' | 'success';
     icon?: ReactNode;
 };
 
@@ -75,6 +75,19 @@ export const Input = styled(
                         &:focus,
                         &:hover {
                             border-color: ${lib.getColor('error')};
+                        }
+                    }
+                `;
+            }
+            if (appearance === 'success') {
+                return css`
+                    background-color: ${lib.getColor('success', 0.1)};
+                    border-color: ${lib.getColor('success')};
+
+                    &:not(:disabled) {
+                        &:focus,
+                        &:hover {
+                            border-color: ${lib.getColor('success')};
                         }
                     }
                 `;
