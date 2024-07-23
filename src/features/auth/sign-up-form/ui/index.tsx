@@ -61,8 +61,12 @@ export const SignUpForm = styled((props: SignUpFormProps) => {
     });
 
     const getInputAppearance = (fieldKey: keyof SignUpFormValues) => {
-        if (getValues(fieldKey)) {
-            return errors[fieldKey] ? 'error' : 'success';
+        if (errors[fieldKey] && touchedFields[fieldKey]) {
+            return 'error';
+        }
+
+        if (getValues(fieldKey) && touchedFields[fieldKey]) {
+            return 'success';
         }
 
         return undefined;
@@ -86,7 +90,7 @@ export const SignUpForm = styled((props: SignUpFormProps) => {
                     )}
                 />
 
-                {errors.email && (
+                {errors.email && touchedFields.email && (
                     <ColoredText className="error" appearance="error">
                         {errors.email.message}
                     </ColoredText>
